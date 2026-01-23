@@ -31,4 +31,9 @@ export class SearchApi {
         }
         return of(data).pipe(delay(200));
     }
+    
+    getSections(): string[] {
+        const set = new Set(SITE_INDEX.map( x => x.section));
+        return Array.from(set).sort(( a, b ) => a.localeCompare(b));
+    }
 };
