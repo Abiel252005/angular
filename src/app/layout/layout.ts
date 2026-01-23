@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { Breadcrumb } from '../component/shared/breadcrumb/breadcrumb';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-layout',
@@ -11,5 +12,12 @@ import { Breadcrumb } from '../component/shared/breadcrumb/breadcrumb';
 
 })
 export class Layout {
+
+  quickQuery = '';
+  constructor(private router: Router) { }
+  goSearch(): void {
+    const qry = (this.quickQuery || '').trim();
+    this.router.navigate(['/busqueda'], { queryParams: { qry } });
+  }
 
 }
