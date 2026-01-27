@@ -9,6 +9,11 @@
         <a routerLink="/menu" routerLinkActive="active">Menú</a>
         <a routerLink="/mapa-sitio" routerLinkActive="active">Mapa del Sitio</a>
     </nav>
+    <form class="d-flex ms-3" (submit)="$event.preventDefault(); goSearch()">
+        <input class="form-control form-control-sm me-2" placeholder="Buscar..." [(ngModel)]="quickQuery"
+            name="quickQuery">
+        <button class="btn btn-sm btn-primary" type="submit"> Ir </button>
+    </form>
 </header>
 
 <main class="content">
@@ -16,5 +21,5 @@
     <router-outlet></router-outlet>
 </main>
 <footer class="footer">
-    <p>&copy; 2024 Sitio Estructura. Todos los derechos reservados.</p>
+    <p>&copy; {{year}} Sitio Estructura. Todos los derechos reservados.</p>
 </footer>
