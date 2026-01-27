@@ -5,7 +5,6 @@ import { Menu } from './pages/menu/menu';
 import { Breadcrumb } from './component/shared/breadcrumb/breadcrumb';
 import { MapaSitio } from './pages/mapa-sitio/mapa-sitio';
 import { Error404 } from './pages/error-404/error-404';
-import { Component } from '@angular/core';
 import { Busqueda } from './pages/busqueda/busqueda';
 
 export const routes: Routes = [
@@ -32,12 +31,12 @@ export const routes: Routes = [
         component: MapaSitio
     },
     {
-        path: '**',
-        component: Error404
-    },
-    { 
         path: 'busqueda',
         component: Busqueda
+    },
+    {
+        path: '**',
+        component: Error404
     },
 ];
 
